@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+  .background-image-container {
+    position: relative;
+    overflow: hidden;
+  }
+  .carousel-container {
+    width: 100%;
+    max-height: none; /* Altura máxima del carrusel */
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  .carousel-slide {
+    display: flex;
+    width: 400%; /* Cambiado para acomodar 4 imágenes de 190px de ancho */
+    animation: slide-left 45s infinite; /* Cambiado el tiempo para demostración */
+  }
+  .carousel-image {
+    width: 25%; /* Asegura que cada imagen llene solo el 25% del ancho del contenedor */
+    object-fit: cover; /* Asegura que la imagen cubra completamente el espacio sin distorsionarse */
+    flex: 0 0 25%; /* Asegura que cada imagen ocupe el 25% del espacio */
+    height: 410px; /* Altura fija para todas las imágenes */
+    position: relative;
+  }
+
+  .carousel-image::after {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   height: 50%;
+   background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+   pointer-events: none; /* Esto asegura que el pseudo-elemento no interfiera con los clics del mouse */
+  }
+  @keyframes slide-left {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-25%); }
+    50% { transform: translateX(-50%); }
+    75% { transform: translateX(-75%); }
+  }
+  @keyframes blink-background {
+  0%, 100% { background-color: rgba(0, 0, 0, 0.7); }
+  100% { background-color: rgba(0, 0, 0, 0); }
+  }
+  .jumbotron {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Ajusta el ancho del jumbotron */
+    text-align: center;
+    border-radius: 10px; /* Opcional: Añade bordes redondeados para un mejor aspecto */
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: blink-background 33s infinite; /* ajusta la duración según tus preferencias */
+  }
+  .jumbotron h1 {
+    font-size: 3em; /* Tamaño de fuente del título */
+    margin-bottom: 20px;
+  }
+  .jumbotron p {
+    font-size: 1.5em; /* Tamaño de fuente del párrafo */
+    line-height: 1.6; /* Altura de línea */
+  }
+  .credits {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    font-size: 1em;
+  }
+  .texto-descriptivo {
+  color: #ffffff; // Esto establece el color del texto a blanco
+  // Aquí puedes agregar más estilos si lo deseas
+  }
+</style>
+</head>
+<body>
+
+<div class="background-image-container">
+  <!-- Carrusel de imágenes -->
+  <div class="carousel-container">
+    <div class="carousel-slide">
+      <img src="assets/dspace/images/imagen1.jpg" class="carousel-image">
+      <img src="assets/dspace/images/imagen2.jpg" class="carousel-image">
+      <img src="assets/dspace/images/imagen3.jpg" class="carousel-image">
+      <img src="assets/dspace/images/imagen4.jpg" class="carousel-image">
+    </div>
+  </div>
+
+  <!-- Texto -->
+  <div class="jumbotron">
+    <h1 class="display-3">INGEMMET-CRIS</h1>
+    <p class="texto-descriptivo">INGEMMET-CRIS, representa una sistema de informacion institucional, una<b>solución integral </b> para la gestión de datos e información de investigación, adaptada específicamente para el Instituto Geológico, Minero y Metalúrgico (INGEMMET)</p>
+    <small class="credits">Repositorio Institucional <a href="https://repositorio.ingemmet.gob.pe/">@INGEMMET</a></small>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+.float-left {
+  // Establece un ancho fijo para la imagen, ajusta según sea necesario
+  width: 20px; 
+
+  // Establece una altura fija para la imagen, ajusta según sea necesario
+  height: 20px; 
+
+  // Asegura que la imagen no se deforme al cambiar el tamaño
+  object-fit: cover; 
+
+  // Agrega un poco de margen alrededor de la imagen si es necesario
+  margin: 5px;
+  
+  // Asegura que la imagen se alinee correctamente con el texto o elementos adyacentes
+  vertical-align: middle;
+}

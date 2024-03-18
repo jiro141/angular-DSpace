@@ -1,0 +1,163 @@
+// Add any global css for the theme here
+$soft-blue: #ebf1f5;
+$color-texto: #333333;
+
+// imports the base global style
+@import '../../../styles/_global-styles.scss';
+
+// Estilos básicos para filtros y opciones
+.facet-filter, .setting-option {
+  background-color: $soft-blue; // Fondo claro para filtros
+  border-radius: var(--bs-border-radius); // Bordes redondeados
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1); // Sombra suave para profundidad
+  transition: all 0.3s ease; // Transición suave para hover
+
+  &:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); // Sombra más prominente al pasar el mouse
+    transform: translateY(-2px); // Ligero levantamiento al pasar el mouse
+  }
+
+  &.p-3 {
+    padding-top: 1rem !important; // Espaciado superior aumentado
+    padding-bottom: 1rem !important; // Espaciado inferior aumentado
+  }
+
+  .badge-secondary {
+    background-color: $soft-blue; // Color de fondo primario para etiquetas
+    color: #fff; // Texto blanco para contraste
+  }
+
+  h4 {
+    font-size: 1.2rem; // Tamaño de fuente ligeramente más grande para títulos
+    font-weight: bold; // Fuente en negrita para títulos
+  }
+}
+
+// Estilos específicos para métricas
+ds-metric-donuts a {
+  background-size: contain;
+  transition: transform 0.3s ease; // Transición suave para transformaciones
+
+  &:hover {
+    transform: scale(1.05); // Aumentar ligeramente el tamaño al pasar el mouse
+  }
+}
+
+.mb-4.col-12.col-lg-3.col-md-6.ng-star-inserted {
+  // Aplica un margen inferior de tamaño 4
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; // Transición suave para transformación y sombra
+
+  // Puedes agregar aquí más estilos si es necesario, por ejemplo:
+  background-color: $soft-blue; // Fondo de las tarjetas
+  border: 1px solid rgba(0, 0, 0, 0.125); // Borde suave
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); // Sombra suave por defecto
+
+  &:hover {
+    transform: scale(1.03); // Crecer ligeramente al pasar el mouse
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra más destacada al pasar el mouse
+  }
+}
+
+.badge-secondary {
+  float: right; // Asumiendo que quieres mantener el flotado a la derecha
+  
+  // Transición suave para el cambio de color de fondo
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #e0c38d; // Cambia a color naranja al pasar el ratón
+  }
+}
+
+.container {
+  padding-right: var(--bs-gutter-x, .75rem);
+  padding-left: var(--bs-gutter-x, .75rem);
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  
+  // Establece un máximo ancho en diferentes tamaños de pantalla
+  @include media-breakpoint-up(sm) {
+    max-width: 540px;
+  }
+  @include media-breakpoint-up(md) {
+    max-width: 720px;
+  }
+  @include media-breakpoint-up(lg) {
+    max-width: 960px;
+  }
+  @include media-breakpoint-up(xl) {
+    max-width: 1140px;
+  }
+  
+  // Estilo de sombra para añadir profundidad
+  box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
+  background-color: $soft-blue; // Utiliza el color azul claro suave definido anteriormente
+  border-radius: .25rem; // Bordes ligeramente redondeados
+}
+
+.lead {
+  font-size: 1.25rem; // Un tamaño de fuente mayor para destacar
+  font-weight: 300; // Una fuente más ligera
+  line-height: 1.5; // Espaciado de línea para mejorar la legibilidad
+  
+  // Color y estilos para mejorar el contraste y la visibilidad
+  color: $color-texto;
+  margin-bottom: 1rem; // Margen inferior para separar del contenido siguiente
+  
+  // Añadir un efecto al pasar el mouse
+  &:hover {
+    color: darken($color-texto, 10%); // Oscurecer el texto al pasar el mouse
+    text-decoration: underline; // Subrayar el texto al pasar el mouse
+  }
+}
+
+.d-flex.flex-wrap.flex-column.justify-content-between.align-items-center.gapy-1.counters-section.ng-star-inserted {
+  transition: box-shadow 0.3s ease, transform 0.3s ease; // Transición suave para sombra y transformación
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra para crear efecto de profundidad
+    transform: translateY(-2px); // Eleva ligeramente el elemento para dar efecto de relieve
+  }
+}
+
+.d-flex.justify-content-between {
+  transition: box-shadow 0.3s ease, transform 0.3s ease; // Transición suave para sombra y transformación
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra para crear efecto de profundidad
+    transform: translateY(-2px); // Eleva ligeramente el elemento para dar efecto de relieve
+  }
+}
+
+// Para elementos con la clase .d-flex.flex-row
+.d-flex.flex-row {
+  transition: box-shadow 0.3s ease, transform 0.3s ease; // Transición suave para sombra y transformación
+
+    .lead {
+      font-size: 1.5rem; // Tamaño de fuente más grande
+      font-weight: bold; // Fuente en negrita
+      color: #000000; // Color de texto más oscuro para mayor contraste
+      // Otros estilos que desees aplicar
+    }
+    
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra para crear efecto de profundidad
+    transform: translateY(-2px);
+    background-color: #ffffff; // Eleva ligeramente el elemento para dar efecto de relieve
+  }
+}
+
+// Para elementos con la clase .border.p-3.ng-star-inserted
+.border.p-3.ng-star-inserted {
+  transition: box-shadow 0.3s ease, transform 0.3s ease; // Transición suave para sombra y transformación
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra para crear efecto de profundidad
+    transform: translateY(-2px);
+    background-color: #ffffff;  // Eleva ligeramente el elemento para dar efecto de relieve
+  }
+}
+
+// Puedes agregar aquí más personalizaciones...
